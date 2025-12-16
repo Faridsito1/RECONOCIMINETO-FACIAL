@@ -1,0 +1,275 @@
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3a56d4;
+  --secondary: #7209b7;
+  --success: #4cc9f0;
+  --danger: #f72585;
+  --warning: #f8961e;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --gray-light: #e9ecef;
+  --border-radius: 12px;
+  --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: var(--light);
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px var(--success); }
+  50% { box-shadow: 0 0 20px var(--success); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(67, 97, 238, 0.4);
+}
+
+.input {
+  padding: 12px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+  font-size: 16px;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--success);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  background: linear-gradient(90deg, #fff, var(--success));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+
+.status {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-success {
+  background: rgba(76, 201, 240, 0.2);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.status-warning {
+  background: rgba(248, 150, 30, 0.2);
+  color: var(--warning);
+  border: 1px solid var(--warning);
+}
+
+.status-danger {
+  background: rgba(247, 37, 133, 0.2);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: var(--gray-light);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --border-radius: 10px;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+  
+  h1, h2, h3, h4 {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  .app-container {
+    max-width: 100%;
+  }
+  
+  .card {
+    padding: 16px;
+  }
+  
+  .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  
+  .input {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  h1, h2, h3, h4 {
+    font-size: 85%;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding: 8px;
+  }
+  
+  .card {
+    padding: 12px;
+  }
+  
+  .btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .input {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .status {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  h1, h2, h3, h4 {
+    font-size: 80%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .header {
+    padding: 10px;
+  }
+  
+  .navigation {
+    padding: 8px 10px;
+  }
+  
+  .nav-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .main-content {
+    padding: 10px;
+  }
+  
+  .register-grid,
+  .attendance-main {
+    gap: 15px;
+  }
+  
+  .form-grid {
+    max-height: 180px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .app-container {
+    max-width: 1400px;
+  }
+  
+  .view-container {
+    max-width: 1300px;
+  }
+}
