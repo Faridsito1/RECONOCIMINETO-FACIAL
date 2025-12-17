@@ -60,7 +60,7 @@
               <span class="label-icon">🏢</span>
               Departamento / Área
             </label>
-            <select v-model="departamento" class="input">
+            <select v-model="departamento" class="input" style="background-color: black;">
               <option value="">Seleccione departamento</option>
               <option value="Administración">Administración</option>
               <option value="TI">TI</option>
@@ -742,5 +742,6 @@ select.input {
     font-size: 13px;
   }
 }
+
 
 </style>
